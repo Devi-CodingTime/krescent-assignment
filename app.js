@@ -19,7 +19,9 @@ import OrderRouter from './routes/orderRouter.js';
 import AuthRouter from './routes/authRouter.js';
 import AuthMiddleware from './middleware/auth.js';
 
-
+app.use('/', (req,res)=>{
+    res.send('API is running...');
+});
 app.use('/api/auth', AuthRouter);
 app.use(AuthMiddleware);
 app.use('/ordersapi', OrderRouter);
